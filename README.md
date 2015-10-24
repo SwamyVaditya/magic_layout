@@ -3,8 +3,8 @@ I created a Jquery plugin that animates all page elements. To demonstrate its ca
 #Word of the author
 If you like my work, put likes. Also subscribe for updatings. It is important for me!
 #Demo
-http://stas-melnikov.ru/magic_layout/
-http://codepen.io/melnik909/pen/RWMwxg
+* [Demo page](http://stas-melnikov.ru/magic_layout/)
+* [Demo example](http://codepen.io/melnik909/pen/RWMwxg)
 #Donate
 If you liked this theme, please donate to me on <a href="https://www.paypal.me/melnik909" target="blank">PayPal</a> or contact me. Thanks!
 ## License
