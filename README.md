@@ -4,17 +4,8 @@ I created a Jquery plugin that animates all page elements. To demonstrate its ca
 If you like my work, put likes. Also subscribe for updatings. It is important for me!
 #Demo
 http://stas-melnikov.ru/magic_layout/
-#Real Usage:
-http://stas-melnikov.ru/
-#How to use:
-http://stas-melnikov.ru/en/magic_layout.html
-#Help
+http://codepen.io/melnik909/pen/RWMwxg
+#Donate
 If you liked this theme, please donate to me on <a href="https://www.paypal.me/melnik909" target="blank">PayPal</a> or contact me. Thanks!
-##Contact info
-  * [my sait](http://stas-melnikov.ru)
-  * [linkedIn](https://www.linkedin.com/in/melnik909)
-  * [facebook](https://www.facebook.com/melnik909)
-  * [googlePlus](https://plus.google.com/u/0/107045860611946174330/posts)
-
 ## License
 MIT
