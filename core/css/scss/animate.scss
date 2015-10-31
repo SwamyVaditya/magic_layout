@@ -67,6 +67,10 @@ facebook: https://www.facebook.com/melnik909
  *core
  */
 
+.layer{
+	opacity: 0;
+}
+ 
 .animated{
 	@include animation_duration(1s);
 	-webkit-animation-fill-mode: both;

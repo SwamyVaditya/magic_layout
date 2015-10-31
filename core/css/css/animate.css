@@ -11,6 +11,11 @@ facebook: https://www.facebook.com/melnik909
 /*
  *core
  */
+ 
+.layer {
+  opacity: 0;
+}
+
 .animated {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
