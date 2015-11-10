@@ -4,36 +4,40 @@
 <title>Magic Layout</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="css/style.css" />
-<link rel="stylesheet" href="../core/css/less/animate.css" type="text/css" media="screen"/>
+<link rel="stylesheet" href="../core/css/css/animate.css" type="text/css"/>
 <style>
-.layer {
-    animation-fill-mode: both;
-    display: block;
-    opacity: 0;
-}
+.effect_container{
 
-.demo_stas_project {
-    height: 250px;
-	width: 250px;
-	margin: 20px 10px;
+	background-color: #eee;
+	box-shadow: 1px 1px 5px #eee;
+	overflow: hidden;
+	
 	position: relative;
-	text-align: center;
-	background-color: #40c95d;
-	display: inline-block;
-	vertical-align: top;
+	padding: 0 0 20px !important;
+	font-size: 18px;	
 }
 
-
-.demo_stas_project_item {
-
-	color: #fff;
-	font-size: 18px;
+.effect_container_label{
 
 	position: absolute;
 	top: 50%;
 	left: 50%;
+	
 	-webkit-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
+}
+
+.demo_effect_box{
+
+    height: 150px;
+	width: 100%;
+
+	line-height: 150px;
+	text-align: center;
+	
+	background-color: #40c95d;
+	margin-bottom: 15px;
+	color: #fff;
 }
 </style>
 </head>
@@ -44,145 +48,376 @@
 		</div>
 	</header>
 	<div class="dt_container dt_content">
-		<div class="dt_welcome">
-			<p class="dt_paragraph">By: Stas Melnikov</p>
-			<p class="dt_paragraph">Email: <a href="mailto:melnik909@ya.ru" class="dt_link">melnik909@ya.ru</a></p>
-		</div>
-		<h3 class="dt_itle_small">1 Step. Include animate.css</h3>
-		<pre class="code language-html">
-			&lt;!-- include animate.css--&gt;
-			&lt;link rel="stylesheet" type="text/css" href="core/css/less/animate.css" /&gt;
-		</pre>
-		<h3 class="dt_itle_small">2 Step. Create HTML markup</h3>
-		<pre class="code language-html">	
-&lt;!-- Add  .layer, data-show-delay data-show-effect, data-time(not necessarily) to element. Example:--&gt;
-&lt;!-- 
-	data-show-effect - animation show effect
-	data-show-dela - delay animation (ms)
-	data-time - time animation (ms)
-
---&gt;
+		<div class="dt_main">
+			<div class="dt_welcome">
+				<p class="dt_paragraph">By: Stas Melnikov</p>
+				<p class="dt_paragraph">Email: <a href="mailto:melnik909@ya.ru" class="dt_link">melnik909@ya.ru</a></p>
+			</div>
+<!-- 			<p>
+				Спасибо вам, что используете мой плагин. Я надеюсь, что он полезен для вас и помогает решать ваши задачи. Я был бы вам благодарен, если вы напишите
+				обратную связь мне.
+			</p> -->
+			<p>
+				Thank you for using my plugin. I hope it is useful for you and helps for a solve your problems. Feedback email me, thank you in advance. 
+			</p>
+			<section id="structure" class="dt_info_box">
+				<h2 class="dt_title_middle">Structure</h2>
+				<p>Once downloaded, unzip the compressed folder to see the structure of plugin. You'll see something like this:</p>
+				<pre class="code language-html">
+					<code>
+core/
+├──css/
+│  ├──css/
+│  │  ├──animate.css
+│  ├──less/
+│  │  ├──animate.less
+│  │  └──animate.css
+│  └──scss/
+│     ├──animate.scss
+│     └──animate.css
+└── js/
+    ├──jquery.js
+    └──magicLayout.js
+					</code>
+				</pre>
+			</section>
+			<section id="initialization" class="dt_info_box">
+				<h2 class="dt_title_middle">Initialization</h2>
+				<h4>Step 1. Include files</h4>
+<!-- 				<p>Сначала нам потребуется подключить файл animate.css в секции head. В файле описаны CSS-правила для анимаций плагина. Далее подключим JS-файлы перед &lt;/body&gt;:</p> 
+ -->				<p>First, we need to include the file animate.css in the head section. Described in the file CSS rules for animations of plugin. Next connect the JS file before &lt;/body&gt;:</p>
+				<ul>
+					<li>- Jquery library(jquery.js)</li>
+					<li>- Magic Layout plugin(magicLayout.js)</li>
+				</ul>	
+<!-- 				<p>В результате мы должны получить следующий код</p>
+ -->				<p>As a result we must receive the following code</p>
+				<pre class="code language-html">
+					<code>
+&lt;head&gt;
+ &lt;link rel="stylesheet" href="core/css/css/animate.css" type="text/css"/&gt;
+&lt;/head&gt;
+&lt;body&gt;			
+ &lt;script src="core/jquery.js"&gt;&lt;/script&gt;
+ &lt;script src="core/magicLayout.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+					</code>
+				</pre>
+				<h4>Step 2. Create HTML-markup</h4>
+<!-- 				<p>	
+					Для работы c Magic Layout требуется добавить .layer к элементу, который будет анимироваться. Следующим шагом будет
+					установка настроек плагина с помощью data атрибуты data-show-effect (для названия эффекта) и data-show-delay (для установки задержки перед началом анимации).
+				</p> -->
+				<p>To work on Magic Layout, you must add the .layer to the element that will be animated. The next step is install the settings of plugin with helps data attributes data-show-effect (for the name of effect) and a data-show-delay (to install a delay before starting the animation).</p>
+				<pre class="code language-html">
+					<code>
 &lt;div id="english_portfolio" class="dt_container dt_container_columns3 projects"&gt;	
-	&lt;a href="#" target="blank" class="dt_container_item demo_stas_project layer" data-show-effect="zoomIn" data-show-delay="400"&gt;
-		&lt;h3 class="project_item"&gt;Responsive modal window&lt;/h3&gt;
-	&lt;/a&gt;
-	&lt;a href="#" target="blank" class="dt_container_item demo_stas_project layer" data-show-effect="zoomIn" data-show-delay="600"&gt;
-		&lt;h3 class="demo_stas_project_item"&gt;Responsive modal window&lt;/h3&gt;
-	&lt;/a&gt;
-	&lt;a href="#" target="blank" class="dt_container_item demo_stas_project layer" data-show-effect="zoomIn" data-show-delay="800"&gt;
-		&lt;h3 class="demo_stas_project_item"&gt;Responsive modal window&lt;/h3&gt;
-	&lt;/a&gt;
+ &lt;a href="#" class="demo_stas_project layer" data-show-effect="zoomIn" data-show-delay="400"&gt;
+  &lt;h3 class="project_item"&gt;Responsive modal window&lt;/h3&gt;
+ &lt;/a&gt;
+ &lt;a href="#" class="demo_stas_project layer" data-show-effect="zoomIn" data-show-delay="600"&gt;
+  &lt;h3 class="demo_stas_project_item"&gt;Responsive modal window&lt;/h3&gt;
+ &lt;/a&gt;
+ &lt;a href="#" class="demo_stas_project layer" data-show-effect="zoomIn" data-show-delay="800" data-time="3500"&gt;
+  &lt;h3 class="demo_stas_project_item"&gt;Responsive modal window&lt;/h3&gt;
+ &lt;/a&gt;
 &lt;/div&gt;
-		</pre>
-		<h3 class="dt_itle_small">Step3. Include jquery.js and magicLayout.js</h3>
-		<pre class="code language-html">
-			<code>
-				&lt;!-- include jquery.js, magicLayout.js  before the closing &lt;/body&gt; tag--&gt;
-				&lt;script src="core/jquery.js"&gt;&lt;/script&gt;
-				&lt;script src="core/magicLayout.js"&gt;&lt;/script&gt;
-			</code>
-		</pre>
-		<h3 class="dt_itle_small">Step4. Init plugin</h3>
-		<pre>
-			<code class="language-javascript" data-lang="javascript">
-				(function($){
-					$('.dt_button').on('click',function(){
-						$(this).magicLayout({
-							container: $('#english_portfolio')
-						});
-					});
-				})(jQuery);
-			</code>
-		</pre>
-		<button class="dt_button">Show</button>
-		<div id="english_portfolio" class="dt_container dt_container_columns3 projects">	
-			<a href="#" target="blank" class="dt_container_item demo_stas_project layer" data-show-effect="zoomIn" data-show-delay="400">
-				<h3 class="demo_stas_project_item">Responsive modal window</h3>
-			</a>
-			<a href="#" target="blank" class="dt_container_item demo_stas_project layer" data-show-effect="zoomIn" data-show-delay="600">
-				<h3 class="demo_stas_project_item">Responsive modal window</h3>
-			</a>
-			<a href="#" target="blank" class="dt_container_item demo_stas_project layer" data-show-effect="zoomIn" data-show-delay="800">
-				<h3 class="demo_stas_project_item">Responsive modal window</h3>
-			</a>
-		</div>
-		<h2 class="dt_title_middle">List effects</h2>
-		<table>
-			<thead>
-			<tr>
-				<th colspan="4">Show</th>
-			</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>jump</td>
-					<td>shine</td>
-					<td>impulse</td>
-					<td>elastic</td>
-				</tr>
-				<tr>
-					<td>jitter</td>
-					<td>shine</td>
-					<td>jump</td>
-					<td>jumpIn</td>
-				</tr>
-				<tr>
-					<td>jumpInDown</td>
-					<td>jumpInLeft</td>
-					<td>jumpInRight</td>
-					<td>jumpInUp</td>
-				</tr>
-				<tr>
-					<td>jump</td>
-					<td>fadeIn</td>
-					<td>fadeInDown</td>
-					<td>fadeInDownBig</td>
-				</tr>
-				<tr>
-					<td>fadeInLeft</td>
-					<td>fadeInLeftBig</td>
-					<td>fadeInRight</td>
-					<td>fadeInRightBig</td>
-				</tr>
-				<tr>
-					<td>fadeInUp</td>
-					<td>fadeInUpBig</td>
-					<td>flipInX</td>
-					<td>flipInY</td>
-				</tr>
-				<tr>
-					<td>lightSpeedIn</td>
-					<td>rotateIn</td>
-					<td>rotateInDownLeft</td>
-					<td>rotateInDownRight</td>
-				</tr>
-				<tr>
-					<td>rotateInUpLeft</td>
-					<td>rotateInUpRight</td>
-					<td>rollIn</td>
-					<td>zoomIn</td>
-				</tr>
-				<tr>
-					<td>zoomInDown</td>
-					<td>zoomInLeft</td>
-					<td>zoomInRight</td>
-					<td>zoomInUp</td>
-				</tr>
-			</tbody>
-		</table>
+					</code>
+				</pre>
+				<h4>Step 3. JS initialization code</h4>
+				<pre>
+					<code class="language-javascript" data-lang="javascript">
+(function($){
+ $('.demo_button').on('click',function(){
+  $(this).magicLayout({
+   container: $('#english_portfolio')
+  });
+ });
+})(jQuery);
+					</code>
+				</pre>
+				
+				<!-- example -->
+				<h3 class="dt_title_small">Demo</h3>
+				<p>
+					<button class="dt_button demo_button">Show</button>
+					<button id="hide_button" class="dt_button">Hide</button>
+				</p>
+				<div id="english_portfolio" class="dt_container_columns3 projects" style="display: none;">	
+					<div class="dt_container_item demo_effect_box layer" data-show-effect="zoomIn" data-show-delay="400">Responsive modal window</div>
+					<div class="dt_container_item demo_effect_box layer" data-show-effect="zoomIn" data-show-delay="600">Responsive modal window</div>
+					<div class="dt_container_item demo_effect_box layer" data-show-effect="zoomIn" data-show-delay="800" data-time="3500">Responsive modal window</div>
+				</div>
+			</section>
+			<section id="settings" class="dt_info_box">
+				<h2 class="dt_title_middle">Settings</h2>
+				<table>
+					<thead>
+					<tr>
+						<th>Parameter</th>
+						<th>Description</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>data-show-effect</td>						
+							<td>Effects setting (required)</td>
+						</tr>
+						<tr>
+							<td>data-show-delay</td>
+							<td>Delay parameter. Default value - 0 ms <br></td>
+						</tr>
+						<tr>
+							<td>data-time</td>
+							<td>Duration parameter. Default value - 1000 ms.</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+			<section id="list_effects" class="dt_info_box">
+				<h2 class="dt_title_middle">List effects</h2>
+				<div class="dt_container_columns3">	
+					<div class="dt_container_item effect_container">
+						<span class="effect_container_label">impulse</span>
+						<div class="demo_effect_box layer" data-show-effect="impulse" data-show-delay="400">impulse</div>
+						<button class="dt_button demo_effect_button">Show</button>
+						<button class="dt_button demo_effect_clear_button">Clear</button>
+					</div>
+					<div class="dt_container_item effect_container">
+						<span class="effect_container_label">jump</span>
+						<div class="demo_effect_box layer" data-show-effect="jump" data-show-delay="400">jump</div>
+						<button class="dt_button demo_effect_button">Show</button>
+						<button class="dt_button demo_effect_clear_button">Clear</button>
+					</div>
+					<div class="dt_container_item effect_container">
+						<span class="effect_container_label">jumpIn</span>
+						<div class="demo_effect_box layer" data-show-effect="jumpIn" data-show-delay="400">jumpIn</div>
+						<button class="dt_button demo_effect_button">Show</button>
+						<button class="dt_button demo_effect_clear_button">Clear</button>
+					</div>
+					<div class="dt_container_item effect_container">
+						<span class="effect_container_label">jumpInDown</span>
+						<div class="demo_effect_box layer" data-show-effect="jumpInDown" data-show-delay="400">jumpInDown</div>
+						<button class="dt_button demo_effect_button">Show</button>
+						<button class="dt_button demo_effect_clear_button">Clear</button>
+					</div>
+					<div class="dt_container_item effect_container">
+						<span class="effect_container_label">jumpInLeft</span>
+						<div class="demo_effect_box layer" data-show-effect="jumpInLeft" data-show-delay="400">jumpInLeft</div>
+						<button class="dt_button demo_effect_button">Show</button>
+						<button class="dt_button demo_effect_clear_button">Clear</button>
+					</div>
+					<div class="dt_container_item effect_container">
+						<span class="effect_container_label">jumpInRight</span>
+						<div class="demo_effect_box layer" data-show-effect="jumpInRight" data-show-delay="400">jumpInRight</div>
+						<button class="dt_button demo_effect_button">Show</button>
+						<button class="dt_button demo_effect_clear_button">Clear</button>
+					</div>
+					<div class="dt_container_item effect_container">
+						<span class="effect_container_label">jumpInUp</span>
+						<div class="demo_effect_box layer" data-show-effect="jumpInUp" data-show-delay="400">jumpInUp</div>
+						<button class="dt_button demo_effect_button">Show</button>
+						<button class="dt_button demo_effect_clear_button">Clear</button>
+					</div>
+					<div class="dt_container_item effect_container">
+						<span class="effect_container_label">fadeIn</span>
+						<div class="demo_effect_box layer" data-show-effect="fadeIn" data-show-delay="400">fadeIn</div>
+						<button class="dt_button demo_effect_button">Show</button>
+						<button class="dt_button demo_effect_clear_button">Clear</button>
+					</div>
+					<div class="dt_container_item effect_container">
+						<span class="effect_container_label">fadeInDown</span>
+						<div class="demo_effect_box layer" data-show-effect="fadeInDown" data-show-delay="400">fadeInDown</div>
+						<button class="dt_button demo_effect_button">Show</button>
+						<button class="dt_button demo_effect_clear_button">Clear</button>
+					</div>
+					<div class="dt_container_item effect_container">
+						<span class="effect_container_label">fadeInDownBig</span>
+						<div class="demo_effect_box layer" data-show-effect="fadeInDownBig" data-show-delay="400">fadeInDownBig</div>
+						<button class="dt_button demo_effect_button">Show</button>
+						<button class="dt_button demo_effect_clear_button">Clear</button>
+					</div>
+					<div class="dt_container_item effect_container">
+						<span class="effect_container_label">fadeInLeft</span>
+						<div class="demo_effect_box layer" data-show-effect="fadeInLeft" data-show-delay="400">fadeInLeft</div>
+						<button class="dt_button demo_effect_button">Show</button>
+						<button class="dt_button demo_effect_clear_button">Clear</button>
+					</div>
+					<div class="dt_container_item effect_container">
+						<span class="effect_container_label">fadeInLeftBig</span>
+						<div class="demo_effect_box layer" data-show-effect="fadeInLeftBig" data-show-delay="400">fadeInLeftBig</div>
+						<button class="dt_button demo_effect_button">Show</button>
+						<button class="dt_button demo_effect_clear_button">Clear</button>
+					</div>
+					<div class="dt_container_item effect_container">
+						<span class="effect_container_label">fadeInRight</span>
+						<div class="demo_effect_box layer" data-show-effect="fadeInRight" data-show-delay="400">fadeInRight</div>
+						<button class="dt_button demo_effect_button">Show</button>
+						<button class="dt_button demo_effect_clear_button">Clear</button>
+					</div>
+					<div class="dt_container_item effect_container">
+						<span class="effect_container_label">fadeInRightBig</span>
+						<div class="demo_effect_box layer" data-show-effect="fadeInRightBig" data-show-delay="400">fadeInRightBig</div>
+						<button class="dt_button demo_effect_button">Show</button>
+						<button class="dt_button demo_effect_clear_button">Clear</button>
+					</div>
+					<div class="dt_container_item effect_container">
+						<span class="effect_container_label">fadeInUp</span>
+						<div class="demo_effect_box layer" data-show-effect="fadeInUp" data-show-delay="400">fadeInUp</div>
+						<button class="dt_button demo_effect_button">Show</button>
+						<button class="dt_button demo_effect_clear_button">Clear</button>
+					</div>
+					<div class="dt_container_item effect_container">
+						<span class="effect_container_label">fadeInUpBig</span>
+						<div class="demo_effect_box layer" data-show-effect="fadeInUpBig" data-show-delay="400">fadeInUpBig</div>
+						<button class="dt_button demo_effect_button">Show</button>
+						<button class="dt_button demo_effect_clear_button">Clear</button>
+					</div>
+					<div class="dt_container_item effect_container">
+						<span class="effect_container_label">flipInX</span>
+						<div class="demo_effect_box layer" data-show-effect="flipInX" data-show-delay="400">flipInX</div>
+						<button class="dt_button demo_effect_button">Show</button>
+						<button class="dt_button demo_effect_clear_button">Clear</button>
+					</div>
+					<div class="dt_container_item effect_container">
+						<span class="effect_container_label">flipInY</span>
+						<div class="demo_effect_box layer" data-show-effect="flipInY" data-show-delay="400">flipInY</div>
+						<button class="dt_button demo_effect_button">Show</button>
+						<button class="dt_button demo_effect_clear_button">Clear</button>
+					</div>
+					<div class="dt_container_item effect_container">
+						<span class="effect_container_label">lightSpeedIn</span>
+						<div class="demo_effect_box layer" data-show-effect="lightSpeedIn" data-show-delay="400">lightSpeedIn</div>
+						<button class="dt_button demo_effect_button">Show</button>
+						<button class="dt_button demo_effect_clear_button">Clear</button>
+					</div>
+					<div class="dt_container_item effect_container">
+						<span class="effect_container_label">rotateIn</span>
+						<div class="demo_effect_box layer" data-show-effect="rotateIn" data-show-delay="400">rotateIn</div>
+						<button class="dt_button demo_effect_button">Show</button>
+						<button class="dt_button demo_effect_clear_button">Clear</button>
+					</div>
+					<div class="dt_container_item effect_container">
+						<span class="effect_container_label">rotateInDownLeft</span>
+						<div class="demo_effect_box layer" data-show-effect="rotateInDownLeft" data-show-delay="400">rotateInDownLeft</div>
+						<button class="dt_button demo_effect_button">Show</button>
+						<button class="dt_button demo_effect_clear_button">Clear</button>
+					</div>
+					<div class="dt_container_item effect_container">
+						<span class="effect_container_label">rotateInDownRight</span>
+						<div class="demo_effect_box layer" data-show-effect="rotateInDownRight" data-show-delay="400">rotateInDownRight</div>
+						<button class="dt_button demo_effect_button">Show</button>
+						<button class="dt_button demo_effect_clear_button">Clear</button>
+					</div>
+					<div class="dt_container_item effect_container">
+						<span class="effect_container_label">rotateInUpLeft</span>
+						<div class="demo_effect_box layer" data-show-effect="rotateInUpLeft" data-show-delay="400">rotateInUpLeft</div>
+						<button class="dt_button demo_effect_button">Show</button>
+						<button class="dt_button demo_effect_clear_button">Clear</button>
+					</div>
+					<div class="dt_container_item effect_container">
+						<span class="effect_container_label">rotateInUpRight</span>
+						<div class="demo_effect_box layer" data-show-effect="rotateInUpRight" data-show-delay="400">rotateInUpRight</div>
+						<button class="dt_button demo_effect_button">Show</button>
+						<button class="dt_button demo_effect_clear_button">Clear</button>
+					</div>
+					<div class="dt_container_item effect_container">
+						<span class="effect_container_label">rollIn</span>
+						<div class="demo_effect_box layer" data-show-effect="rollIn" data-show-delay="400">rollIn</div>
+						<button class="dt_button demo_effect_button">Show</button>
+						<button class="dt_button demo_effect_clear_button">Clear</button>
+					</div>
+					<div class="dt_container_item effect_container">
+						<span class="effect_container_label">zoomIn</span>
+						<div class="demo_effect_box layer" data-show-effect="zoomIn" data-show-delay="400">zoomIn</div>
+						<button class="dt_button demo_effect_button">Show</button>
+						<button class="dt_button demo_effect_clear_button">Clear</button>
+					</div>
+					<div class="dt_container_item effect_container">
+						<span class="effect_container_label">zoomInDown</span>
+						<div class="demo_effect_box layer" data-show-effect="zoomInDown" data-show-delay="400">zoomInDown</div>
+						<button class="dt_button demo_effect_button">Show</button>
+						<button class="dt_button demo_effect_clear_button">Clear</button>
+					</div>
+					<div class="dt_container_item effect_container">
+						<span class="effect_container_label">zoomInUp</span>
+						<div class="demo_effect_box layer" data-show-effect="zoomInUp" data-show-delay="400">zoomInUp</div>
+						<button class="dt_button demo_effect_button">Show</button>
+						<button class="dt_button demo_effect_clear_button">Clear</button>
+					</div>
+					<div class="dt_container_item effect_container">
+						<span class="effect_container_label">zoomInLeft</span>
+						<div class="demo_effect_box layer" data-show-effect="zoomInLeft" data-show-delay="400">zoomInLeft</div>
+						<button class="dt_button demo_effect_button">Show</button>
+						<button class="dt_button demo_effect_clear_button">Clear</button>
+					</div>
+					<div class="dt_container_item effect_container">
+						<span class="effect_container_label">zoomInRight</span>
+						<div class="demo_effect_box layer" data-show-effect="zoomInRight" data-show-delay="400">zoomInRight</div>
+						<button class="dt_button demo_effect_button">Show</button>
+						<button class="dt_button demo_effect_clear_button">Clear</button>
+					</div>
+				</div>
+			</section>
+			<section id="more_examples" class="dt_info_box">
+				<h2 class="dt_title_middle">More examples</h2>
+				<ul>
+					<li><a href="http://codepen.io/melnik909/pen/RWMwxg" class="dt_link" target="blank">Popup using Magic Layout</a></li>
+					<li><a href="http://codepen.io/melnik909/pen/XmqYez" class="dt_link" target="blank">Demo example for portfolio using Magic Layout</a></li>
+				</ul>
+			</section>
+		</div>	
+		<aside class="sidebar">
+			<div class="sidebar_layout">
+				<h3 class="dt_title_small">Navigation</h3>
+				<nav class="menu">
+					<a href="#structure" class="menu_link dt_link">Structure</a>
+					<a href="#initialization" class="menu_link dt_link">Initialization</a>
+					<a href="#settings" class="menu_link dt_link">Settings</a>
+					<a href="#list_effects" class="menu_link dt_link">List effects</a>
+					<a href="#more_examples" class="menu_link dt_link">More examples</a>
+				</nav>
+			</div>
+		</aside>
 	</div>
 	<footer class="dt_wrapper dt_footer">
-		<a class="dt_link" target="blank" href="https://www.linkedin.com/in/melnik909">Developed by Stas Melnikov</a>
+		<a class="dt_link" href="https://www.linkedin.com/in/melnik909">Developed by Stas Melnikov</a>
 	</footer>
 <script src="../core/js/jquery.js"></script>
 <script src="../core/js/magicLayout.js"></script>
 <script>
 (function($){
-	$('.dt_button').on('click',function(){
-			$(this).magicLayout({
-					container: $('#english_portfolio')
-			});
+
+	var demo_box = $("#english_portfolio");
+	
+	$(".demo_button").on('click', function(){
+	
+		demo_box.show();
+		
+		$(this).magicLayout({
+			container: demo_box
+		});
 	});
+	
+	$("#hide_button").on('click',function(){
+		demo_box.hide();
+	});	
+	
+	$(".demo_effect_button").on('click',function(){
+	
+		demo_box.show();
+		
+		$(this).magicLayout({
+			container: $(this).parent()
+		});
+	});
+	
+	$(".demo_effect_clear_button").on('click',function(){
+	
+		var demo_box = $(this).siblings('.demo_effect_box');
+		demo_box.removeClass(demo_box.attr('data-show-effect'));
+	});
+	
 })(jQuery);
 </script>
 <script src="http://stas-melnikov.ru/rainbow-custom.min.js"></script> 

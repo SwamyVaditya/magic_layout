@@ -50,9 +50,6 @@
 					container: display_active.next()
 				});
 				
-				$(this).magicLayout({
-					container: display_active
-				});
 			}
 			
 			if(!display_active.hasClass("display_active")){	
