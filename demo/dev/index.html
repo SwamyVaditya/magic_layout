@@ -3,12 +3,11 @@
 <head>
 <title>The Magic Layout</title>
 <meta charset="utf-8" />
-<meta name="description" content="Personal page front-end developer Melnikov Stas"/>
 <meta name="author" content="Melnikov Stas"/>
 <meta name="description" content="Magic layout - this animation layout for your sites."/>
 <meta name="keywords" content="animated layuot, animation layout, animation grid, animated grid, jquery layout, jquery animation layout"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<link rel="stylesheet" href="css/main.css" type="text/css"/>
+<link rel="stylesheet" href="css/style.css" type="text/css"/>
 <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'/>
 <link href="favicon.ico" rel="icon"/>
 <link rel="apple-touch-icon" href="favicon-32x32.png"/>
@@ -34,35 +33,35 @@
 				<h2 class="title"><span class="title__label">KEY FEATURES</span></h2>
 				<div class="subtitle">Why it is useful</div>
 			</div>
-			<div class="features display-ib-box_3columns">
-				<article class="features__inner display-ib-box__item">
+			<div class="features flexbox flexbox_3column">
+				<article class="features__inner flexbox__item">
 					<h4 class="features__title layer" data-show-effect="jumpInLeft" data-show-delay="100">CSS3 Animations</h4>
-					<p class="features__description layer" data-show-effect="jumpInLeft" data-show-delay="100">The plugin use the best browser features when available (CSS3 transition and transform, GPU acceleration) </p>
+					<p class="layer" data-show-effect="jumpInLeft" data-show-delay="100">The plugin use the best browser features when available (CSS3 transition and transform, GPU acceleration) </p>
 				</article>
-				<article class="features__inner display-ib-box__item">
+				<article class="features__inner flexbox__item">
 					<h4 class="features__title layer" data-show-effect="jumpInUp" data-show-delay="600">Includes LESS and SASS</h4>
-					<p class="features__description layer" data-show-effect="jumpInUp" data-show-delay="600">The plug-in supports modern preprocessors of LESS and SASS</p>
+					<p class="layer" data-show-effect="jumpInUp" data-show-delay="600">The plug-in supports modern preprocessors of LESS and SASS</p>
 				</article>
-				<article class="features__inner display-ib-box__item">
+				<article class="features__inner flexbox__item">
 					<h4 class="features__title layer" data-show-effect="jumpInRight" data-show-delay="900">Support mobile devices</h4>
-					<p class="features__description layer" data-show-effect="jumpInRight" data-show-delay="900">The plug-in is well optimized under mobile devices. Animations work clean and smoothly</p>
+					<p class="layer" data-show-effect="jumpInRight" data-show-delay="900">The plug-in is well optimized under mobile devices. Animations work clean and smoothly</p>
 				</article>
-				<article class="features__inner display-ib-box__item">
+				<article class="features__inner flexbox__item">
 					<h4 class="features__title layer" data-show-effect="jumpInLeft" data-show-delay="300">EASY TO USE & CUSTOMIZE</h4>
-					<p class="features__description layer" data-show-effect="jumpInLeft" data-show-delay="300">Modern preloader is easy to use and customize</p>
+					<p class="layer" data-show-effect="jumpInLeft" data-show-delay="300">Modern preloader is easy to use and customize</p>
 				</article>
-				<article class="features__inner display-ib-box__item">
+				<article class="features__inner flexbox__item">
 					<h4 class="features__title layer" data-show-effect="jumpInUp" data-show-delay="800">Support modern browsers and platform</h4>
-					<p class="features__description layer" data-show-effect="jumpInUp" data-show-delay="800">IE 10+, Opera, Google Chrome, Firefox, Yandex Browser, Safari, Androind, iOS</p>
+					<p class="layer" data-show-effect="jumpInUp" data-show-delay="800">IE 10+, Opera, Google Chrome, Firefox, Yandex Browser, Safari, Androind, iOS</p>
 				</article>
-				<article class="features__inner display-ib-box__item">
+				<article class="features__inner flexbox__item">
 					<h4 class="features__title layer" data-show-effect="jumpInRight" data-show-delay="1200">Documentation</h4>
-					<p class="features__description layer" data-show-effect="jumpInRight" data-show-delay="1200">Extensive step-by-step guide to help you with usage and customization.</p>
+					<p class="layer" data-show-effect="jumpInRight" data-show-delay="1200">Extensive step-by-step guide to help you with usage and customization.</p>
 				</article>
 			</div>
 		</div>
 	</section>
-	<section id="display-three" class="wrapper display_js">
+	<section id="display-three" class="wrapper wrapper_boxshadow display_js">
 		<div class="main-container main-container_fullwidth main-container_padding-bottom">
 			<div class="main-container__header">
 				<h2 class="title"><span class="title__label">More my plugins</span></h2>
@@ -192,6 +191,17 @@
 			</div>
 		</div>
 	</section>
+	<section id="display-examples" class="wrapper display_js">
+		<div class="main-container main-container_fullwidth main-container_padding-bottom">
+			<div class="main-container__header">
+				<h2 class="title"><span class="title__label">More examples</span></h2>
+			</div>
+			<div class="examples flexbox flexbox_3column">
+				<a href="http://codepen.io/melnik909/pen/RWMwxg" class="button flexbox__item examples__button" target="blank"><span class="button__label">Demo 1</span></a>
+				<a href="http://codepen.io/melnik909/pen/XmqYez" class="button flexbox__item examples__button" target="blank"><span class="button__label">Demo 2</span></a>
+			</div>
+		</div>
+	</section>
 	<div id="display-four" class="wrapper word-author display_js">
 		<div class="main-container main-container_padding">
 			<h2 class="title word-author__title">If you like my work</h2>
@@ -201,7 +211,7 @@
 				</div>
 				<span class="word-author__label">or</span> 
 				<div class="word-author__share">
-						<span class="word-author__column">Share this project</span> 
+						<span class="word-author__column share-label">Share this project</span> 
 						<div class="yashare-auto-init word-author__column" data-yashareL10n="en" data-yashareType="small" data-yashareQuickServices="twitter,gplus,facebook" data-yashareTheme="counter"></div>
 				</div>
 			</div>
@@ -210,7 +220,7 @@
 	<footer class="footer">
 		<div class="main-container">
 			<div class="copyright">© 2015 All right reserved</div>
-			<div class="author">Developed by <a href="http://stas-melnikov.ru" target="_blank">Stas melnikov</a></div>
+			<div class="author"><a href="http://stas-melnikov.ru" target="_blank">Developed by Stas melnikov</a></div>
 		</div>
 	</footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

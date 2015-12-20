@@ -16,7 +16,7 @@
 }
 
 .word-author__title{
-	margin-bottom: 50px;
+	margin-bottom: 5rem;
 }
  
 .word-author__column{
@@ -25,7 +25,7 @@
 }
 
 .word-author__label{
-	font-size: 20px;
+	font-size: 2rem;
 	font-weight: 300;
 	width: 32%;
 }
@@ -39,13 +39,13 @@
 	width: 32%;
 }
 
-@donate_icon_width: 20px;
-@donate_icon_height: 30px;
+@donate_icon_width: 2rem;
+@donate_icon_height: 3rem;
 
 .donate__label{
 
     position: relative;
-	padding-left: @donate_icon_width  * 2 + 10px;
+	padding-left: @donate_icon_width  * 2 + 1rem;
 	
 	&:before, &:after{
 	
@@ -61,7 +61,7 @@
 		
 		
 		background-color: red;
-		border-radius: 50px 50px 0 0;
+		border-radius: 5rem 5rem 0 0;
 		
 		-webkit-transform: rotate(-45deg);
 		transform: rotate(-45deg);
@@ -82,7 +82,14 @@
 
 .b-share_theme_counter .b-share-btn__wrap{
 	float: none !important;
-	margin: 0 5px 0 0 !important;
+	margin: 0 0.5rem 0 0 !important;
 	display: inline-block;
 	vertical-align: text-bottom
+}
+
+@media screen and (max-width: 640px){
+	
+	.share-label{
+		display: none;
+	}
 }
