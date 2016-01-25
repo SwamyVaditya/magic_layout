@@ -10,5 +10,7 @@ I created a Jquery plugin that animates all page elements. To demonstrate its ca
 ## Donate
 If you liked this plugin, please donate to me on [PayPal](https://www.paypal.me/melnik909). Thanks!
 
-## License
-MIT
+##Commercial license
+If you want to use Magic Layout to develop commercial sites, themes, projects, and applications, the Commercial license is the appropriate license. With this option, your source code is kept proprietary. If you need the commercial license, please send the message on my mail - melnik909@ya.ru
+##Open source license
+If you are creating an open source application under a license compatible with the MIT, you may use Magic Layout under the terms of the MIT.
