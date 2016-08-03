@@ -1,0 +1,64 @@
+
+a{
+	color: #000;
+	text-decoration: none;
+	transition: color .4s ease-out;
+	
+	&:hover, &:focus{
+		outline: none;
+		color: #fefefe;
+	}	
+}
+
+.list{
+	list-style: none;
+    line-height: 5vw;
+    font-size: 2.5vw;
+}
+
+h1, h2{
+	font-weight: 300;
+}
+
+.welcome{
+	font-size: 8vw;
+	width: 100%;
+}
+
+.welcome__label{
+	font-size: 2vw;
+	display: block;
+	margin-top: 0.5vw;
+    padding-left: .8vw;
+}
+
+.title{
+
+	font-size: 6vw;
+	position: relative;
+	
+	box-sizing: border-box;
+	padding-right: 5rem;
+	padding-bottom: 2rem;
+	
+	&:after{
+		
+		content: "";
+		display: block;
+		background-color: @color_white;
+		
+		width: 10rem;
+		height: .5rem;
+		
+		position: absolute;
+		bottom: 0;
+		left: .7rem;
+	}
+}
+
+@media screen and (max-width: 980px){
+	
+	.title{
+		width: 100%;
+	}
+}

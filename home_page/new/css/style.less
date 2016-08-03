@@ -1,0 +1,36 @@
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+@color_white: #fefefe;
+
+html{
+	font-size: 10px;
+}
+
+@media screen and (max-width: 1024px){
+	html{
+		font-size: 8px;
+	}
+}
+
+@media screen and (max-width: 640px){
+	html{
+		font-size: 6.5px;
+	}
+}
+
+body{
+	font-family: "Roboto", sans-serif;
+	font-weight: 300;
+	font-size: 1.6rem;
+	color: @color_white;
+}
+ 
+@import 'typographics/typographics.less';
+@import 'layout/layout.less';
+@import 'components/menu.less';
+@import 'sections/demos.less';
+
