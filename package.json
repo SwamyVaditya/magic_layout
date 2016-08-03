@@ -1,0 +1,29 @@
+{
+  "name": "magic_layout",
+  "version": "1.0.0",
+  "description": "I created a Jquery plugin that animates all page elements. To demonstrate its capabilities, I created this demo page as my portfolio. The main advantage of the plugin is its simple. You will need to connect the files and set need settings. For you available 36 effects, the ability to control the animation time. This plugin will help to make beautiful sites!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://melnik909@github.com/melnik909/magic_layout.git"
+  },
+  "keywords": ["jQuery", "CSS3", "animation"],
+  "author": "Stas Melnikov",
+  "bugs": {
+    "url": "https://github.com/melnik909/magic_layout/issues"
+  },
+  "homepage": "https://github.com/melnik909/magic_layout#readme",
+  "devDependencies": {
+    "devlib": "^0.3.4",
+    "gulp": "^3.9.1",
+    "gulp-file-include": "^0.14.0",
+    "gulp-html-minifier": "^0.1.8",
+    "gulp-jshint": "^2.0.1",
+    "gulp-watch": "^4.3.9",
+    "jshint": "^2.9.2",
+    "jshint-stylish": "^2.2.0"
+  }
+}

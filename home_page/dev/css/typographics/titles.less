@@ -1,0 +1,35 @@
+
+h1, h2{
+	font-weight: 300;
+}
+
+.title{
+
+	font-size: 6vw;
+	position: relative;
+	
+	box-sizing: border-box;
+	padding-right: 5rem;
+	padding-bottom: 2rem;
+	
+	&:after{
+		
+		content: "";
+		display: block;
+		background-color: @color_white;
+		
+		width: 10rem;
+		height: .5rem;
+		
+		position: absolute;
+		bottom: 0;
+		left: .7rem;
+	}
+}
+
+@media screen and (max-width: 640px){
+	
+	.title{
+		font-size: 7rem;
+	}
+}

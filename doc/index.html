@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>The Magic Layout - jQuery plugin by which you can animate all the elements on the page</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/demo.css">
+<link rel="stylesheet" href="../magicLayout/magicLayout-all.css">
+</head>
+</body>
+	<header class="dt-header top-panel top-panel_blue">
+		<div class="main-container top-panel__layout">
+			<span class="top-panel__logo">The Magic Layout - jQuery plugin by which you can animate all the elements on the page</span>
+		</div>
+	</header>
+	<div class="dt-container dt-container_flex">
+		<aside class="dt-navbar">
+			<div class="dt-navbar__section">
+				<ul class="dt-navbar__list">
+					<li><a href="#structure" class="dt-navbar__link">Structure</a></li>
+					<li><a href="#get_started" class="dt-navbar__link">Get started</a></li>
+					<li><a href="#settings" class="dt-navbar__link">Settings</a></li>
+					<li><a href="#list_effects" class="dt-navbar__link">List effects</a></li>
+					<li><a href="#changelog" class="dt-navbar__link">Changelog</a></li>
+				</ul>
+			</div> 
+		</aside>
+		<div class="dt-content dt-content_scroll-bar-yes">
+			<section id="structure" class="dt-section">
+				<h2 class="dt-title dt-title_middle dt-title_border-bottom">Structure</h2>
+				<div class="dt-info-block">
+					<p>
+						Once downloaded, unzip the compressed folder to see the structure of plugin. 
+						You'll see something like this:
+					</p>
+					<pre class="code language-html">
+						<code>
+magicLayout/
+├──animations/
+│  │  ├──in/
+│  │  │  ├──fade/
+│  │  │  │  ├──fadeIn.less
+│  │  │  │  ├──fadeInDown.less
+│  │  │  │  ├──fadeInDownBig.less
+│  │  │  │  ├──fadeInLeft.less
+│  │  │  │  ├──fadeInLeftBig.less
+│  │  │  │  ├──fadeInRight.less
+│  │  │  │  ├──fadeInRightBig.less
+│  │  │  │  ├──fadeInUp.less
+│  │  │  │  ├──fadeInUpBig.less
+│  │  │  ├──flip/
+│  │  │  │  ├──flipInX.less
+│  │  │  │  └──flipInY.less
+│  │  │  ├──jump/
+│  │  │  │  ├──jump.less
+│  │  │  │  ├──jumpIn.less
+│  │  │  │  ├──jumpInDown.less
+│  │  │  │  ├──jumpInLeft.less
+│  │  │  │  ├──jumpInRight.less
+│  │  │  │  └──jumpInUp.less
+│  │  │  ├──others/
+│  │  │  │  ├──elastic.less
+│  │  │  │  ├──impulse.less
+│  │  │  │  ├──lightSpeedIn.less
+│  │  │  │  └──rollIn.less
+│  │  │  ├──rotate/
+│  │  │  │  ├──rotateIn.less
+│  │  │  │  ├──rotateInDownLeft.less
+│  │  │  │  ├──rotateInDownRight.less
+│  │  │  │  ├──rotateInUpLeft.less
+│  │  │  │  └──rotateInUpRight.less
+│  │  │  └──zoom/
+│  │  │  │  ├──zoomIn.less
+│  │  │  │  ├──zoomInDown.less
+│  │  │  │  ├──zoomInLeft.less
+│  │  │  │  ├──zoomInRight.less
+│  │  │  │  └──zoomInUp.less
+├──jquery.magicLayout.js
+├──magicLayout-all.css
+├──magicLayout-all.less
+├──magicLayout.css
+└──magicLayout.less
+
+						</code>
+					</pre>			
+			</section>
+			<section id="get_started" class="dt-section">
+				<h2 class="dt-title dt-title_middle dt-title_border-bottom">Get Started</h2>
+				<div class="dt-info-block">
+					<h4>Step 1. Include files</h4>
+					<p>
+						First, we need to include the file magicLayout-all.css in the head section.
+						Described in the file CSS rules for animations of plugin. 
+						Next connect the JS file before &lt;/body&gt;:
+					</p>
+					<ul class="dt-list dt-list_nested">
+						<li><span class="dt-label dt-label_bold">jQuery</span></li>
+						<li><span class="dt-label dt-label_bold">Magic Layout plugin</span> - jquery.magicLayout.js</li>
+					</ul>	
+					<p>As a result we must receive the following code</p>
+					<pre class="code language-html">
+						<code>
+&lt;head&gt;
+ &lt;link rel="stylesheet" href="magicLayout/magicLayout-all.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;		
+
+ &lt;!-- Content --&gt;
+ 
+ &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"&gt;&lt;/script&gt;
+ &lt;script src="magicLayout/jquery.magicLayout.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+						</code>
+					</pre>					
+				</div>
+				<div class="dt-info-block">
+					<h4>Step 2. Create HTML-markup</h4>
+					<p>
+						To work on Magic Layout, you must add the js-ml-layer
+						to the element that will be animated. The next step is install
+						the settings of plugin with helps data attributes data-show-effect
+						(for the name of effect), a data-show-delay (to install a delay before 
+						starting the animation) and data-duration (for duration of animation).
+					</p>
+				<pre class="code language-html">
+						<code>
+&lt;button class="button button_white js-start-demo"&gt;Start demo&lt;/button&gt;
+
+&lt;div class="demo-boxs"&gt;
+ &lt;div class="demo-box js-ml-layer" data-show-effect="zoomIn" data-show-delay="400"&gt;&lt;/div&gt;
+ &lt;div class="demo-box js-ml-layer" data-show-effect="zoomIn" data-show-delay="600"&gt;&lt;/div&gt;
+ &lt;div class="demo-box js-ml-layer" data-show-effect="zoomIn" data-show-delay="800" data-duration="2000"&gt;&lt;/div&gt;
+&lt;/div&gt;
+						</code>
+					</pre>						
+				</div>
+				<div class="dt-info-block">
+					<h4>Step 3. JS initialization code</h4>
+					<pre>
+						<code class="language-javascript">
+$(".js-start-demo").on("click", function(){	
+ $(this).magicLayout({
+  container: $(this).next()	
+ });
+});
+						</code>
+					</pre>			
+				</div>
+				<div class="dt-live-example">
+					<button class="button button_white js-start-demo">Start demo</button>
+					<div class="demo-boxs">
+						<div class="demo-box js-ml-layer" data-show-effect="zoomIn" data-show-delay="400"></div>
+						<div class="demo-box js-ml-layer" data-show-effect="zoomIn" data-show-delay="600"></div>
+						<div class="demo-box js-ml-layer" data-show-effect="zoomIn" data-show-delay="800" data-duration="2000"></div>
+					</div>
+				</div>
+			</section>	
+			<section id="settings" class="dt-section">
+				<h2 class="dt-title dt-title_middle dt-title_border-bottom">Settings</h2>
+				<div class="dt-info-block">
+					<table>
+						<thead>
+						<tr>
+							<th>Parameter</th>
+							<th>Description</th>
+						</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>data-show-effect</td>
+								<td>Effects setting (required)</td>
+							</tr>
+							<tr>
+								<td>data-show-effect</td>
+								<td>Delay parameter. Default value - 0 ms</td>
+							</tr>	
+							<tr>
+								<td>data-duration</td>
+								<td>Duration parameter. Default value - 1000 ms</td>
+							</tr>
+						</tbody>
+					</table>	
+				</div>	
+			</section>	
+			<section id="list_effects" class="dt-section">
+				<h2 class="dt-title dt-title_middle dt-title_border-bottom">List effects</h2>
+				<div class="dt-info-block">
+					<div class="demo-boxs">
+						<div class="demo-boxs__column">
+							<div class="demo-box js-ml-layer" data-show-effect="fadeIn"></div>
+							<div class="demo-boxs__label"><span>fadeIn</span></div>
+							<button class="button button_white js-effect-start">Start</button>
+							<button class="button button_white js-effect-reset">Reset</button>
+						</div>
+						<div class="demo-boxs__column">
+							<div class="demo-box js-ml-layer" data-show-effect="fadeInDown"></div>
+							<div class="demo-boxs__label"><span>fadeInDown</span></div>
+							<button class="button button_white js-effect-start">Start</button>
+							<button class="button button_white js-effect-reset">Reset</button>
+						</div>
+						<div class="demo-boxs__column">
+							<div class="demo-box js-ml-layer" data-show-effect="fadeInDownBig"></div>
+							<div class="demo-boxs__label"><span>fadeInDownBig</span></div>
+							<button class="button button_white js-effect-start">Start</button>
+							<button class="button button_white js-effect-reset">Reset</button>
+						</div>
+						<div class="demo-boxs__column">
+							<div class="demo-box js-ml-layer" data-show-effect="fadeInLeft"></div>
+							<div class="demo-boxs__label"><span>fadeInLeft</span></div>
+							<button class="button button_white js-effect-start">Start</button>
+							<button class="button button_white js-effect-reset">Reset</button>
+						</div>
+						<div class="demo-boxs__column">
+							<div class="demo-box js-ml-layer" data-show-effect="fadeInLeftBig"></div>
+							<div class="demo-boxs__label"><span>fadeInLeftBig</span></div>
+							<button class="button button_white js-effect-start">Start</button>
+							<button class="button button_white js-effect-reset">Reset</button>
+						</div>
+						<div class="demo-boxs__column">
+							<div class="demo-box js-ml-layer" data-show-effect="fadeInRight"></div>
+							<div class="demo-boxs__label"><span>fadeInRight</span></div>
+							<button class="button button_white js-effect-start">Start</button>
+							<button class="button button_white js-effect-reset">Reset</button>
+						</div>
+						<div class="demo-boxs__column">
+							<div class="demo-box js-ml-layer" data-show-effect="fadeInRightBig"></div>
+							<div class="demo-boxs__label"><span>fadeInRightBig</span></div>
+							<button class="button button_white js-effect-start">Start</button>
+							<button class="button button_white js-effect-reset">Reset</button>
+						</div>
+						<div class="demo-boxs__column">
+							<div class="demo-box js-ml-layer" data-show-effect="fadeInUp"></div>
+							<div class="demo-boxs__label"><span>fadeInUp</span></div>
+							<button class="button button_white js-effect-start">Start</button>
+							<button class="button button_white js-effect-reset">Reset</button>
+						</div>
+						<div class="demo-boxs__column">
+							<div class="demo-box js-ml-layer" data-show-effect="fadeInUpBig"></div>
+							<div class="demo-boxs__label"><span>fadeInUpBig</span></div>
+							<button class="button button_white js-effect-start">Start</button>
+							<button class="button button_white js-effect-reset">Reset</button>
+						</div>
+						<div class="demo-boxs__column">
+							<div class="demo-box js-ml-layer" data-show-effect="flipInX"></div>
+							<div class="demo-boxs__label"><span>flipInX</span></div>
+							<button class="button button_white js-effect-start">Start</button>
+							<button class="button button_white js-effect-reset">Reset</button>
+						</div>	
+						<div class="demo-boxs__column">
+							<div class="demo-box js-ml-layer" data-show-effect="flipInY"></div>
+							<div class="demo-boxs__label"><span>flipInY</span></div>
+							<button class="button button_white js-effect-start">Start</button>
+							<button class="button button_white js-effect-reset">Reset</button>
+						</div>		
+						<div class="demo-boxs__column">
+							<div class="demo-box js-ml-layer" data-show-effect="jump"></div>
+							<div class="demo-boxs__label"><span>jump</span></div>
+							<button class="button button_white js-effect-start">Start</button>
+							<button class="button button_white js-effect-reset">Reset</button>
+						</div>	
+						<div class="demo-boxs__column">
+							<div class="demo-box js-ml-layer" data-show-effect="jumpIn"></div>
+							<div class="demo-boxs__label"><span>jumpIn</span></div>
+							<button class="button button_white js-effect-start">Start</button>
+							<button class="button button_white js-effect-reset">Reset</button>
+						</div>
+						<div class="demo-boxs__column">
+							<div class="demo-box js-ml-layer" data-show-effect="jumpInDown"></div>
+							<div class="demo-boxs__label"><span>jumpInDown</span></div>
+							<button class="button button_white js-effect-start">Start</button>
+							<button class="button button_white js-effect-reset">Reset</button>
+						</div>
+						<div class="demo-boxs__column">
+							<div class="demo-box js-ml-layer" data-show-effect="jumpInLeft"></div>
+							<div class="demo-boxs__label"><span>jumpInLeft</span></div>
+							<button class="button button_white js-effect-start">Start</button>
+							<button class="button button_white js-effect-reset">Reset</button>
+						</div>
+						<div class="demo-boxs__column">
+							<div class="demo-box js-ml-layer" data-show-effect="jumpInRight"></div>
+							<div class="demo-boxs__label"><span>jumpInRight</span></div>
+							<button class="button button_white js-effect-start">Start</button>
+							<button class="button button_white js-effect-reset">Reset</button>
+						</div>
+						<div class="demo-boxs__column">
+							<div class="demo-box js-ml-layer" data-show-effect="jumpInUp"></div>
+							<div class="demo-boxs__label"><span>jumpInUp</span></div>
+							<button class="button button_white js-effect-start">Start</button>
+							<button class="button button_white js-effect-reset">Reset</button>
+						</div>	
+						<div class="demo-boxs__column">
+							<div class="demo-box js-ml-layer" data-show-effect="elastic"></div>
+							<div class="demo-boxs__label"><span>elastic</span></div>
+							<button class="button button_white js-effect-start">Start</button>
+							<button class="button button_white js-effect-reset">Reset</button>
+						</div>	
+						<div class="demo-boxs__column">
+							<div class="demo-box js-ml-layer" data-show-effect="impulse"></div>
+							<div class="demo-boxs__label"><span>impulse</span></div>
+							<button class="button button_white js-effect-start">Start</button>
+							<button class="button button_white js-effect-reset">Reset</button>
+						</div>			
+						<div class="demo-boxs__column">
+							<div class="demo-box js-ml-layer" data-show-effect="lightSpeedIn"></div>
+							<div class="demo-boxs__label"><span>lightSpeedIn</span></div>
+							<button class="button button_white js-effect-start">Start</button>
+							<button class="button button_white js-effect-reset">Reset</button>
+						</div>
+						<div class="demo-boxs__column">
+							<div class="demo-box js-ml-layer" data-show-effect="rollIn"></div>
+							<div class="demo-boxs__label"><span>rollIn</span></div>
+							<button class="button button_white js-effect-start">Start</button>
+							<button class="button button_white js-effect-reset">Reset</button>
+						</div>	
+						<div class="demo-boxs__column">
+							<div class="demo-box js-ml-layer" data-show-effect="rotateIn"></div>
+							<div class="demo-boxs__label"><span>rotateIn</span></div>
+							<button class="button button_white js-effect-start">Start</button>
+							<button class="button button_white js-effect-reset">Reset</button>
+						</div>	
+						<div class="demo-boxs__column">
+							<div class="demo-box js-ml-layer" data-show-effect="rotateInDownLeft"></div>
+							<div class="demo-boxs__label"><span>rotateInDownLeft</span></div>
+							<button class="button button_white js-effect-start">Start</button>
+							<button class="button button_white js-effect-reset">Reset</button>
+						</div>	
+						<div class="demo-boxs__column">
+							<div class="demo-box js-ml-layer" data-show-effect="rotateInDownRight"></div>
+							<div class="demo-boxs__label"><span>rotateInDownRight</span></div>
+							<button class="button button_white js-effect-start">Start</button>
+							<button class="button button_white js-effect-reset">Reset</button>
+						</div>	
+						<div class="demo-boxs__column">
+							<div class="demo-box js-ml-layer" data-show-effect="rotateInUpLeft"></div>
+							<div class="demo-boxs__label"><span>rotateInUpLeft</span></div>
+							<button class="button button_white js-effect-start">Start</button>
+							<button class="button button_white js-effect-reset">Reset</button>
+						</div>	
+						<div class="demo-boxs__column">
+							<div class="demo-box js-ml-layer" data-show-effect="rotateInUpRight"></div>
+							<div class="demo-boxs__label"><span>rotateInUpRight</span></div>
+							<button class="button button_white js-effect-start">Start</button>
+							<button class="button button_white js-effect-reset">Reset</button>
+						</div>		
+						<div class="demo-boxs__column">
+							<div class="demo-box js-ml-layer" data-show-effect="zoomIn"></div>
+							<div class="demo-boxs__label"><span>zoomIn</span></div>
+							<button class="button button_white js-effect-start">Start</button>
+							<button class="button button_white js-effect-reset">Reset</button>
+						</div>
+						<div class="demo-boxs__column">
+							<div class="demo-box js-ml-layer" data-show-effect="zoomInDown"></div>
+							<div class="demo-boxs__label"><span>zoomInDown</span></div>
+							<button class="button button_white js-effect-start">Start</button>
+							<button class="button button_white js-effect-reset">Reset</button>
+						</div>	
+						<div class="demo-boxs__column">
+							<div class="demo-box js-ml-layer" data-show-effect="zoomInLeft"></div>
+							<div class="demo-boxs__label"><span>zoomInLeft</span></div>
+							<button class="button button_white js-effect-start">Start</button>
+							<button class="button button_white js-effect-reset">Reset</button>
+						</div>	
+						<div class="demo-boxs__column">
+							<div class="demo-box js-ml-layer" data-show-effect="zoomInRight"></div>
+							<div class="demo-boxs__label"><span>zoomInRight</span></div>
+							<button class="button button_white js-effect-start">Start</button>
+							<button class="button button_white js-effect-reset">Reset</button>
+						</div>	
+						<div class="demo-boxs__column">
+							<div class="demo-box js-ml-layer" data-show-effect="zoomInUp"></div>
+							<div class="demo-boxs__label"><span>zoomInUp</span></div>
+							<button class="button button_white js-effect-start">Start</button>
+							<button class="button button_white js-effect-reset">Reset</button>
+						</div>							
+					</div>						
+				</div>	
+			</section>		
+			<section id="changelog" class="dt-section">
+				<h2 class="dt-title dt-title_middle dt-title_border-bottom">Changelog</h2>
+				<div class="dt-info-block">	
+					<p><span class="dt-label dt-label_bold">03.08.2016</span></p>
+					<ul class="dt-list dt-list_nested">
+						<li>replaced data-time on data-duration</li>
+						<li>replaced layer on js-ml-layer</li>
+						<li>deleted condition for "active_container" class</li>
+						<li>deleted SASS files</li>
+					</ul>				
+				</div>	
+			</section>					
+		</div>
+	</div>
+	<script src="assets/code-example.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script src="../magicLayout/jquery.magicLayout.js"></script>
+	<script src="assets/demo.js"></script>	
+</body>
+</html>	
