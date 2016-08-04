@@ -21,6 +21,7 @@
 					<li><a href="#structure" class="dt-navbar__link">Structure</a></li>
 					<li><a href="#get_started" class="dt-navbar__link">Get started</a></li>
 					<li><a href="#settings" class="dt-navbar__link">Settings</a></li>
+					<li><a href="#methods" class="dt-navbar__link">Methods</a></li>
 					<li><a href="#list_effects" class="dt-navbar__link">List effects</a></li>
 					<li><a href="#changelog" class="dt-navbar__link">Changelog</a></li>
 				</ul>
@@ -88,7 +89,7 @@ magicLayout/
 			<section id="get_started" class="dt-section">
 				<h2 class="dt-title dt-title_middle dt-title_border-bottom">Get Started</h2>
 				<div class="dt-info-block">
-					<h4>Step 1. Include files</h4>
+					<h4 class="dt-title dt-title_little">Step 1. Include files</h4>
 					<p>
 						First, we need to include the file magicLayout-all.css in the head section.
 						Described in the file CSS rules for animations of plugin. 
@@ -115,7 +116,7 @@ magicLayout/
 					</pre>					
 				</div>
 				<div class="dt-info-block">
-					<h4>Step 2. Create HTML-markup</h4>
+					<h4 class="dt-title dt-title_little">Step 2. Create HTML-markup</h4>
 					<p>
 						To work on Magic Layout, you must add the js-ml-layer
 						to the element that will be animated. The next step is install
@@ -136,9 +137,9 @@ magicLayout/
 					</pre>						
 				</div>
 				<div class="dt-info-block">
-					<h4>Step 3. JS initialization code</h4>
-					<pre>
-						<code class="language-javascript">
+					<h4 class="dt-title dt-title_little">Step 3. JS initialization code</h4>
+					<pre class="language-javascript">
+						<code>
 $(".js-start-demo").on("click", function(){	
  $(this).magicLayout({
   container: $(this).next()	
@@ -183,195 +184,257 @@ $(".js-start-demo").on("click", function(){
 					</table>	
 				</div>	
 			</section>	
+			<section id="methods" class="dt-section">
+				<h2 class="dt-title dt-title_middle dt-title_border-bottom">Methods</h2>
+				<div class="dt-info-block">
+					<table>
+						<thead>
+						<tr>
+							<th>Name</th>
+							<th>Description</th>
+						</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Init</td>
+								<td>
+									<p>Initialization method</p>
+									<p>
+										<span class="dt-label dt-label_bold">Params:</span>
+										options.container - is parent element for js-ml-layer.
+									</p>
+									<p>
+										<span class="dt-label dt-label_bold">Return:</span> options.container
+									</p>								
+								</td>
+							</tr>
+							<tr>
+								<td>Destroy</td>
+								<td>
+									<p>
+										Method for the removal of the class and the animation 
+										settings of js-ml-layer.
+									</p>
+									<p>
+										<span class="dt-label dt-label_bold">Params:</span>
+										magicLayoutActive - is active parent element for js-ml-layer.
+									</p>
+									<p>
+										<span class="dt-label dt-label_bold">Return:</span> this
+									</p>
+								</td>
+							</tr>	
+						</tbody>
+					</table>	
+				</div>	
+				<div class="dt-info-block">
+					<h4 class="dt-title dt-title_little">Init</h4>
+					<pre class="language-javascript">
+						<code>
+$(this).magicLayout({
+ container: magicLayout
+});
+						</code>
+					</pre>						
+				</div>					
+				<div class="dt-info-block">
+					<h4 class="dt-title dt-title_little">Destroy</h4>
+					<pre class="language-javascript">
+						<code>
+$(this).magicLayout("destroy", magicLayoutActive);
+						</code>
+					</pre>						
+				</div>	
+			</section>			
 			<section id="list_effects" class="dt-section">
 				<h2 class="dt-title dt-title_middle dt-title_border-bottom">List effects</h2>
 				<div class="dt-info-block">
-					<div class="demo-boxs">
+					<div class="demo-boxs js-demo-effects">
 						<div class="demo-boxs__column">
 							<div class="demo-box js-ml-layer" data-show-effect="fadeIn"></div>
 							<div class="demo-boxs__label"><span>fadeIn</span></div>
 							<button class="button button_white js-effect-start">Start</button>
-							<button class="button button_white js-effect-reset">Reset</button>
+							<button class="button button_white js-effect-reset" disabled>Reset</button>
 						</div>
 						<div class="demo-boxs__column">
 							<div class="demo-box js-ml-layer" data-show-effect="fadeInDown"></div>
 							<div class="demo-boxs__label"><span>fadeInDown</span></div>
 							<button class="button button_white js-effect-start">Start</button>
-							<button class="button button_white js-effect-reset">Reset</button>
+							<button class="button button_white js-effect-reset" disabled>Reset</button>
 						</div>
 						<div class="demo-boxs__column">
 							<div class="demo-box js-ml-layer" data-show-effect="fadeInDownBig"></div>
 							<div class="demo-boxs__label"><span>fadeInDownBig</span></div>
 							<button class="button button_white js-effect-start">Start</button>
-							<button class="button button_white js-effect-reset">Reset</button>
+							<button class="button button_white js-effect-reset" disabled>Reset</button>
 						</div>
 						<div class="demo-boxs__column">
 							<div class="demo-box js-ml-layer" data-show-effect="fadeInLeft"></div>
 							<div class="demo-boxs__label"><span>fadeInLeft</span></div>
 							<button class="button button_white js-effect-start">Start</button>
-							<button class="button button_white js-effect-reset">Reset</button>
+							<button class="button button_white js-effect-reset" disabled>Reset</button>
 						</div>
 						<div class="demo-boxs__column">
 							<div class="demo-box js-ml-layer" data-show-effect="fadeInLeftBig"></div>
 							<div class="demo-boxs__label"><span>fadeInLeftBig</span></div>
 							<button class="button button_white js-effect-start">Start</button>
-							<button class="button button_white js-effect-reset">Reset</button>
+							<button class="button button_white js-effect-reset" disabled>Reset</button>
 						</div>
 						<div class="demo-boxs__column">
 							<div class="demo-box js-ml-layer" data-show-effect="fadeInRight"></div>
 							<div class="demo-boxs__label"><span>fadeInRight</span></div>
 							<button class="button button_white js-effect-start">Start</button>
-							<button class="button button_white js-effect-reset">Reset</button>
+							<button class="button button_white js-effect-reset" disabled>Reset</button>
 						</div>
 						<div class="demo-boxs__column">
 							<div class="demo-box js-ml-layer" data-show-effect="fadeInRightBig"></div>
 							<div class="demo-boxs__label"><span>fadeInRightBig</span></div>
 							<button class="button button_white js-effect-start">Start</button>
-							<button class="button button_white js-effect-reset">Reset</button>
+							<button class="button button_white js-effect-reset" disabled>Reset</button>
 						</div>
 						<div class="demo-boxs__column">
 							<div class="demo-box js-ml-layer" data-show-effect="fadeInUp"></div>
 							<div class="demo-boxs__label"><span>fadeInUp</span></div>
 							<button class="button button_white js-effect-start">Start</button>
-							<button class="button button_white js-effect-reset">Reset</button>
+							<button class="button button_white js-effect-reset" disabled>Reset</button>
 						</div>
 						<div class="demo-boxs__column">
 							<div class="demo-box js-ml-layer" data-show-effect="fadeInUpBig"></div>
 							<div class="demo-boxs__label"><span>fadeInUpBig</span></div>
 							<button class="button button_white js-effect-start">Start</button>
-							<button class="button button_white js-effect-reset">Reset</button>
+							<button class="button button_white js-effect-reset" disabled>Reset</button>
 						</div>
 						<div class="demo-boxs__column">
 							<div class="demo-box js-ml-layer" data-show-effect="flipInX"></div>
 							<div class="demo-boxs__label"><span>flipInX</span></div>
 							<button class="button button_white js-effect-start">Start</button>
-							<button class="button button_white js-effect-reset">Reset</button>
+							<button class="button button_white js-effect-reset" disabled>Reset</button>
 						</div>	
 						<div class="demo-boxs__column">
 							<div class="demo-box js-ml-layer" data-show-effect="flipInY"></div>
 							<div class="demo-boxs__label"><span>flipInY</span></div>
 							<button class="button button_white js-effect-start">Start</button>
-							<button class="button button_white js-effect-reset">Reset</button>
+							<button class="button button_white js-effect-reset" disabled>Reset</button>
 						</div>		
 						<div class="demo-boxs__column">
 							<div class="demo-box js-ml-layer" data-show-effect="jump"></div>
 							<div class="demo-boxs__label"><span>jump</span></div>
 							<button class="button button_white js-effect-start">Start</button>
-							<button class="button button_white js-effect-reset">Reset</button>
+							<button class="button button_white js-effect-reset" disabled>Reset</button>
 						</div>	
 						<div class="demo-boxs__column">
 							<div class="demo-box js-ml-layer" data-show-effect="jumpIn"></div>
 							<div class="demo-boxs__label"><span>jumpIn</span></div>
 							<button class="button button_white js-effect-start">Start</button>
-							<button class="button button_white js-effect-reset">Reset</button>
+							<button class="button button_white js-effect-reset" disabled>Reset</button>
 						</div>
 						<div class="demo-boxs__column">
 							<div class="demo-box js-ml-layer" data-show-effect="jumpInDown"></div>
 							<div class="demo-boxs__label"><span>jumpInDown</span></div>
 							<button class="button button_white js-effect-start">Start</button>
-							<button class="button button_white js-effect-reset">Reset</button>
+							<button class="button button_white js-effect-reset" disabled>Reset</button>
 						</div>
 						<div class="demo-boxs__column">
 							<div class="demo-box js-ml-layer" data-show-effect="jumpInLeft"></div>
 							<div class="demo-boxs__label"><span>jumpInLeft</span></div>
 							<button class="button button_white js-effect-start">Start</button>
-							<button class="button button_white js-effect-reset">Reset</button>
+							<button class="button button_white js-effect-reset" disabled>Reset</button>
 						</div>
 						<div class="demo-boxs__column">
 							<div class="demo-box js-ml-layer" data-show-effect="jumpInRight"></div>
 							<div class="demo-boxs__label"><span>jumpInRight</span></div>
 							<button class="button button_white js-effect-start">Start</button>
-							<button class="button button_white js-effect-reset">Reset</button>
+							<button class="button button_white js-effect-reset" disabled>Reset</button>
 						</div>
 						<div class="demo-boxs__column">
 							<div class="demo-box js-ml-layer" data-show-effect="jumpInUp"></div>
 							<div class="demo-boxs__label"><span>jumpInUp</span></div>
 							<button class="button button_white js-effect-start">Start</button>
-							<button class="button button_white js-effect-reset">Reset</button>
+							<button class="button button_white js-effect-reset" disabled>Reset</button>
 						</div>	
 						<div class="demo-boxs__column">
 							<div class="demo-box js-ml-layer" data-show-effect="elastic"></div>
 							<div class="demo-boxs__label"><span>elastic</span></div>
 							<button class="button button_white js-effect-start">Start</button>
-							<button class="button button_white js-effect-reset">Reset</button>
+							<button class="button button_white js-effect-reset" disabled>Reset</button>
 						</div>	
 						<div class="demo-boxs__column">
 							<div class="demo-box js-ml-layer" data-show-effect="impulse"></div>
 							<div class="demo-boxs__label"><span>impulse</span></div>
 							<button class="button button_white js-effect-start">Start</button>
-							<button class="button button_white js-effect-reset">Reset</button>
+							<button class="button button_white js-effect-reset" disabled>Reset</button>
 						</div>			
 						<div class="demo-boxs__column">
 							<div class="demo-box js-ml-layer" data-show-effect="lightSpeedIn"></div>
 							<div class="demo-boxs__label"><span>lightSpeedIn</span></div>
 							<button class="button button_white js-effect-start">Start</button>
-							<button class="button button_white js-effect-reset">Reset</button>
+							<button class="button button_white js-effect-reset" disabled>Reset</button>
 						</div>
 						<div class="demo-boxs__column">
 							<div class="demo-box js-ml-layer" data-show-effect="rollIn"></div>
 							<div class="demo-boxs__label"><span>rollIn</span></div>
 							<button class="button button_white js-effect-start">Start</button>
-							<button class="button button_white js-effect-reset">Reset</button>
+							<button class="button button_white js-effect-reset" disabled>Reset</button>
 						</div>	
 						<div class="demo-boxs__column">
 							<div class="demo-box js-ml-layer" data-show-effect="rotateIn"></div>
 							<div class="demo-boxs__label"><span>rotateIn</span></div>
 							<button class="button button_white js-effect-start">Start</button>
-							<button class="button button_white js-effect-reset">Reset</button>
+							<button class="button button_white js-effect-reset" disabled>Reset</button>
 						</div>	
 						<div class="demo-boxs__column">
 							<div class="demo-box js-ml-layer" data-show-effect="rotateInDownLeft"></div>
 							<div class="demo-boxs__label"><span>rotateInDownLeft</span></div>
 							<button class="button button_white js-effect-start">Start</button>
-							<button class="button button_white js-effect-reset">Reset</button>
+							<button class="button button_white js-effect-reset" disabled>Reset</button>
 						</div>	
 						<div class="demo-boxs__column">
 							<div class="demo-box js-ml-layer" data-show-effect="rotateInDownRight"></div>
 							<div class="demo-boxs__label"><span>rotateInDownRight</span></div>
 							<button class="button button_white js-effect-start">Start</button>
-							<button class="button button_white js-effect-reset">Reset</button>
+							<button class="button button_white js-effect-reset" disabled>Reset</button>
 						</div>	
 						<div class="demo-boxs__column">
 							<div class="demo-box js-ml-layer" data-show-effect="rotateInUpLeft"></div>
 							<div class="demo-boxs__label"><span>rotateInUpLeft</span></div>
 							<button class="button button_white js-effect-start">Start</button>
-							<button class="button button_white js-effect-reset">Reset</button>
+							<button class="button button_white js-effect-reset" disabled>Reset</button>
 						</div>	
 						<div class="demo-boxs__column">
 							<div class="demo-box js-ml-layer" data-show-effect="rotateInUpRight"></div>
 							<div class="demo-boxs__label"><span>rotateInUpRight</span></div>
 							<button class="button button_white js-effect-start">Start</button>
-							<button class="button button_white js-effect-reset">Reset</button>
+							<button class="button button_white js-effect-reset" disabled>Reset</button>
 						</div>		
 						<div class="demo-boxs__column">
 							<div class="demo-box js-ml-layer" data-show-effect="zoomIn"></div>
 							<div class="demo-boxs__label"><span>zoomIn</span></div>
 							<button class="button button_white js-effect-start">Start</button>
-							<button class="button button_white js-effect-reset">Reset</button>
+							<button class="button button_white js-effect-reset" disabled>Reset</button>
 						</div>
 						<div class="demo-boxs__column">
 							<div class="demo-box js-ml-layer" data-show-effect="zoomInDown"></div>
 							<div class="demo-boxs__label"><span>zoomInDown</span></div>
 							<button class="button button_white js-effect-start">Start</button>
-							<button class="button button_white js-effect-reset">Reset</button>
+							<button class="button button_white js-effect-reset" disabled>Reset</button>
 						</div>	
 						<div class="demo-boxs__column">
 							<div class="demo-box js-ml-layer" data-show-effect="zoomInLeft"></div>
 							<div class="demo-boxs__label"><span>zoomInLeft</span></div>
 							<button class="button button_white js-effect-start">Start</button>
-							<button class="button button_white js-effect-reset">Reset</button>
+							<button class="button button_white js-effect-reset" disabled>Reset</button>
 						</div>	
 						<div class="demo-boxs__column">
 							<div class="demo-box js-ml-layer" data-show-effect="zoomInRight"></div>
 							<div class="demo-boxs__label"><span>zoomInRight</span></div>
 							<button class="button button_white js-effect-start">Start</button>
-							<button class="button button_white js-effect-reset">Reset</button>
+							<button class="button button_white js-effect-reset" disabled>Reset</button>
 						</div>	
 						<div class="demo-boxs__column">
 							<div class="demo-box js-ml-layer" data-show-effect="zoomInUp"></div>
 							<div class="demo-boxs__label"><span>zoomInUp</span></div>
 							<button class="button button_white js-effect-start">Start</button>
-							<button class="button button_white js-effect-reset">Reset</button>
+							<button class="button button_white js-effect-reset" disabled>Reset</button>
 						</div>							
 					</div>						
 				</div>	

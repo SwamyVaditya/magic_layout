@@ -49,6 +49,25 @@
 			
 			return options.container;
 			
+		},
+		
+		destroy: function(magicLayoutActive){
+			
+			if(typeof(magicLayoutActive) === "undefined"){
+				
+				$.error("You need to transfer active parent element for js-ml-layer");
+				return false;
+				
+			}			
+				
+			magicLayoutActive.find(".js-ml-layer").map(function(){
+
+				$(this).removeClass("js-ml-layer_animated " + $(this).attr("data-show-effect")).removeAttr("style");
+				
+			});
+			
+			return this;
+			
 		}
 		
 	};

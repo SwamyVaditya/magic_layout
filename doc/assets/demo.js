@@ -13,7 +13,7 @@
 	
 	$(".js-effect-start").on("click", function(){
 		
-		$(this).magicLayout({
+		$(this).attr("disabled", true).siblings(".js-effect-reset").attr("disabled", false).magicLayout({
 			
 			container: $(this).parent()
 			
@@ -23,10 +23,11 @@
 	
 	$(".js-effect-reset").on("click", function(){
 		
-		var demoBox = $(this).siblings(".js-ml-layer");
-		
-		demoBox.removeClass(demoBox.attr("data-show-effect")).removeAttr("style");
-		
+		$(this).attr("disabled", true)
+			   .magicLayout("destroy", $(this).parent())
+			   .siblings(".js-effect-start")
+			   .attr("disabled", false);
+				
 	});
 	
 })(window.jQuery);

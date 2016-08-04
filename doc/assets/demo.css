@@ -49,3 +49,15 @@
   font-weight: bold;
   margin: 1rem 0;
 }
+.button_white[disabled] {
+  opacity: .5;
+  cursor: text;
+}
+.button_white[disabled]:hover {
+  background: none;
+  color: inherit;
+  border-color: inherit;
+}
+td {
+  vertical-align: top;
+}
